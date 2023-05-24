@@ -1,4 +1,30 @@
+/**
+ * Función global que genera la matriz, primero recibe el @dim que son las dimensones de la matriz (es una matriz idéntica tanto en filas como en columnas)
+ */
+function matrizEspiral() {
+  var dim = prompt("Ingrese un valor", 0);
+  var arreglo = construyeMatriz(dim);
+  arreglo = rellenoMatriz(arreglo, dim, 0, 1);
+  mostrarMatriz(arreglo, dim);
+}
+/**
+ * Función que se encarga de crear la matriz y la rellena de 0
+ * @param {Dimensones de la matriz} dim
+ * @returns La matriz ya creada
+ */
 
+function construyeMatriz(dim) {
+  var x = [];
+  var y = [];
+  for (let i = 0; i < dim; i++) {
+    x.push([]);
+    for (let j = 0; j < dim; j++) {
+      x[i][j] = 0;
+    }
+  }
+  console.log(x);
+  return x;
+}
 /**
  *
  * @param {matriz a tratar} arr
